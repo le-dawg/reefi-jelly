@@ -19,7 +19,6 @@ This way we make it possible that biodiversity and ecosystems as a public good a
 * should be regenerative:
 * education for fishermen in coral reef stewardship
 * income for former fishermen
-* income for 
 
 ## Ethereum Foundation
 🏆 Prize - Inclusion and tangible local impact
