@@ -40,7 +40,34 @@ Of the Coral Reef, whilst keeping people engaged through their impact score.
    * Stewards for their work
    * Insurance for mitigating risk
    * Monitoring services
-4. Every 3 months monitoring 
+4. Every 6 months monitoring 
+5. There will be an update to your NFT showing how much progress has been made with your contribution and to keep people engaged
+
+
+# Judging Criteria
+1. Technicality
+- scaffold eth
+- defi
+
+2. Originality 
+* is the project tackling a new or unsolved proble, or creating a unique/ creative solution to an existing problem?
+
+3. Practicality
+- How complete/functional is the project? Is it ready to be used by their intended audience?
+
+
+4. Usability (UI/UX/DX)
+- Is the project easy to use? Has the team made good effort in removing friction for the user?
+
+
+5. WOW factor
+- Catch all for other factors the previous categories may have missed
+  
+
+
+
+
+
 
 
 
