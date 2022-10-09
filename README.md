@@ -9,4 +9,9 @@ This project is aimed at doing just that. By picking a project with the aim to r
 
 This way we make it possible that biodiversity and ecosystems as a public good are protected and economies around them are aligned to take care of them rather than extract and destroy them.
 
+## Tech used
+
+- scaffold-eth
+- runs on polygon 
+
 
