@@ -74,8 +74,8 @@ const { ethers } = require("ethers");
 */
 
 /// 📡 What chain are your contracts deployed to?
-const targetNetwork = NETWORKS.localhost; // <------- select your target frontend network (localhost, rinkeby, xdai, mainnet)
-
+//const targetNetwork = NETWORKS.mumbai; // <------- select your target frontend network (localhost, rinkeby, xdai, mainnet)
+const targetNetwork = NETWORKS.localhost;
 // 😬 Sorry for all the console logging
 const DEBUG = true;
 const NETWORKCHECK = true;
@@ -661,14 +661,15 @@ function App(props) {
 
   const mintItem = async () => {
     // upload to ipfs
-    
+
     const uploaded = await ipfs.add(JSON.stringify(json[count]));
     setCount(count + 1);
     console.log("Uploaded Hash: ", uploaded);
     const result = tx(
       writeContracts &&
         writeContracts.YourCollectible &&
-        writeContracts.YourCollectible.mintItem(address, uploaded.path),
+        //writeContracts.YourCollectible.mintItem(address, uploaded.path),
+        writeContracts.YourCollectible.mintItem(address),
       update => {
         console.log("📡 Transaction Update:", update);
         if (update && (update.status === "confirmed" || update.status === 1)) {
@@ -756,7 +757,7 @@ function App(props) {
                   mintItem();
                 }}
               >
-                MINT NFT
+                FUND PROJECT
               </Button>
             </div>
             <div style={{ width: 640, margin: "auto", marginTop: 32, paddingBottom: 32 }}>

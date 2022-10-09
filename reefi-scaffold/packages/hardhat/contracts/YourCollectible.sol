@@ -14,25 +14,42 @@ contract YourCollectible is
     ERC721Enumerable,
     ERC721URIStorage
 {
+    modifier onlyReceiver {
+        require(msg.sender == _receiver);
+        _;
+    }
 
     using Counters for Counters.Counter;
     Counters.Counter private _tokenIdCounter;
     Counters.Counter private _funderIdCounter;
 
-    mapping(uint256 => address) private _funders;
+    mapping (uint256 => address) private _funders;
+    mapping (address => uint256) private _fundingAmount;
+    mapping (address => uint256) private _fundsAvailableForReceiver;
 
+    address _receiver;
     uint256 _impactScore = 0;
     address _projectOwner;
-    mapping(uint256 => uint256) private _score; //old score
+    // mapping(uint256 => uint256) private _score; //old score
 
-    constructor() ERC721("ImpactNFT", "INFT") {}
+    constructor() ERC721("ImpactNFT", "INFT") {
+        _receiver = msg.sender;
+    }
+
+    function setReceiver(address receiver) public onlyReceiver
+    {
+        _receiver = receiver;
+    }
 
     function _baseURI() internal pure override returns (string memory) {
         return "https://ipfs.io/ipfs/";
     }
 
-    function mintItem(address to, string memory uri) public payable returns (uint256) {
+    function mintItem(address to) public payable returns (uint256) {
         _tokenIdCounter.increment();
+        _funderIdCounter.increment();
+        _funders[_funderIdCounter.current()] = msg.sender;
+        _fundingAmount[msg.sender] = _fundingAmount[msg.sender] + msg.value;
         uint256 tokenId = _tokenIdCounter.current();
         _safeMint(to, tokenId);
         //_setTokenURI(tokenId, uri);
@@ -56,8 +73,8 @@ contract YourCollectible is
         changeTokenURIBasedOnScore(tokenId);
     }
 
-    function getScore(uint256 tokenId) public view returns (uint256){
-        return _score[tokenId];
+    function getScore() public view returns (uint256){
+        return _impactScore;
     }
 
     // The following functions are overrides required by Solidity.
@@ -109,7 +126,11 @@ contract YourCollectible is
         return address(this).balance;
     }
 
-    function moveFunds(address payable _to, uint256 amount) public payable { //later to onlyOwner or projectOwner
+    function getReceiver() public view returns (address) {
+        return _receiver;
+    }
+
+    function moveFunds(address payable _to, uint256 amount) public payable onlyReceiver { //later to onlyOwner or projectOwner
     // Call returns a boolean value indicating success or failure.
     // This is the current recommended method to use.
         require(address(this).balance >= amount);

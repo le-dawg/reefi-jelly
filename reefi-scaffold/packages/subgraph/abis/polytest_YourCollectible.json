@@ -188,20 +188,13 @@
     "type": "function"
   },
   {
-    "inputs": [],
-    "name": "getReceiver",
-    "outputs": [
+    "inputs": [
       {
-        "internalType": "address",
-        "name": "",
-        "type": "address"
+        "internalType": "uint256",
+        "name": "tokenId",
+        "type": "uint256"
       }
     ],
-    "stateMutability": "view",
-    "type": "function"
-  },
-  {
-    "inputs": [],
     "name": "getScore",
     "outputs": [
       {
@@ -243,6 +236,11 @@
         "internalType": "address",
         "name": "to",
         "type": "address"
+      },
+      {
+        "internalType": "string",
+        "name": "uri",
+        "type": "string"
       }
     ],
     "name": "mintItem",
@@ -391,19 +389,6 @@
       }
     ],
     "name": "setApprovalForAll",
-    "outputs": [],
-    "stateMutability": "nonpayable",
-    "type": "function"
-  },
-  {
-    "inputs": [
-      {
-        "internalType": "address",
-        "name": "receiver",
-        "type": "address"
-      }
-    ],
-    "name": "setReceiver",
     "outputs": [],
     "stateMutability": "nonpayable",
     "type": "function"

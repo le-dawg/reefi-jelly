@@ -20,6 +20,8 @@ const { isAddress, getAddress, formatUnits, parseUnits } = utils;
 */
 
 // Select the network you want to deploy to here:
+// const defaultNetwork = "localhost";
+//const defaultNetwork = "polytest";
 const defaultNetwork = "localhost";
 
 const mainnetGwei = 115;
@@ -104,8 +106,8 @@ module.exports = {
       },
     },
     polytest: {
-      url: "https://speedy-nodes-nyc.moralis.io/XXXXXXXXXXXXXXXXXXXXXXX/polygon/mumbai", // <---- YOUR MORALIS ID! (not limited to infura)
-      gasPrice: 1000000000,
+      url: "https://polygon-mumbai.g.alchemy.com/v2/n57W-p1iv-KSgMAzHPGVvZ5ATfwuxRO7", // <---- YOUR MORALIS ID! (not limited to infura)
+      gasPrice: 35 * 1000000000,
       accounts: {
         mnemonic: mnemonic(),
       },
