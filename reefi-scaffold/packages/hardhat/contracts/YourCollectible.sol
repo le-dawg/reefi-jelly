@@ -27,6 +27,8 @@ contract YourCollectible is
     mapping (address => uint256) private _fundingAmount;
     mapping (address => uint256) private _fundsAvailableForReceiver;
 
+    uint256 _minFunding = 10000000000000000; //0.01Ether
+
     address _receiver;
     uint256 _impactScore = 0;
     address _projectOwner;
@@ -45,7 +47,7 @@ contract YourCollectible is
         return "https://ipfs.io/ipfs/";
     }
 
-    function mintItem(address to) public payable returns (uint256) {
+    function mintItem(address to) private returns (uint256) {
         _tokenIdCounter.increment();
         _funderIdCounter.increment();
         _funders[_funderIdCounter.current()] = msg.sender;
@@ -140,6 +142,7 @@ contract YourCollectible is
 
     function fundProject() external payable
     {
-
+        require(msg.value>=_minFunding);
+        mintItem(msg.sender);
     }
 }
