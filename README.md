@@ -1,4 +1,4 @@
-# Reefi-Jelly 
+# ReeFi-Jelly 
 This is a project developed at ETHGlobal Bogota Hackathon.
 
 One of the biggest human-made problems is the destruction of ecosystem services and biodiversity all over the world, even though half of global GDP depends on them.
