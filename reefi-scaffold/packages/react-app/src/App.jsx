@@ -74,8 +74,8 @@ const { ethers } = require("ethers");
 */
 
 /// 📡 What chain are your contracts deployed to?
-//const targetNetwork = NETWORKS.mumbai; // <------- select your target frontend network (localhost, rinkeby, xdai, mainnet)
-const targetNetwork = NETWORKS.localhost;
+const targetNetwork = NETWORKS.mumbai; // <------- select your target frontend network (localhost, rinkeby, xdai, mainnet)
+//const targetNetwork = NETWORKS.localhost;
 // 😬 Sorry for all the console logging
 const DEBUG = true;
 const NETWORKCHECK = true;
@@ -721,7 +721,7 @@ function App(props) {
                 setRoute("/ipfsup");
               }}
               to="/ipfsup"
-            > 
+            >
               Ecosystem Progress
             </Link>
           </Menu.Item>
@@ -759,6 +759,28 @@ function App(props) {
               >
                 FUND PROJECT
               </Button>
+            </div>
+            <div>
+            <Contract
+              name="YourCollectible"
+              signer={userSigner}
+              provider={localProvider}
+              address={address}
+              blockExplorer={blockExplorer}
+              contractConfig={contractConfig}
+              show={("fundProject")}
+            />
+            </div>
+            <div>
+            <Contract
+              name="YourCollectible"
+              signer={userSigner}
+              provider={localProvider}
+              address={address}
+              blockExplorer={blockExplorer}
+              contractConfig={contractConfig}
+              show={("updateImpactScore")}
+            />
             </div>
             <div style={{ width: 640, margin: "auto", marginTop: 32, paddingBottom: 32 }}>
               <List

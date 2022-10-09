@@ -107,7 +107,7 @@ module.exports = {
     },
     polytest: {
       url: "https://polygon-mumbai.g.alchemy.com/v2/n57W-p1iv-KSgMAzHPGVvZ5ATfwuxRO7", // <---- YOUR MORALIS ID! (not limited to infura)
-      gasPrice: 35 * 1000000000,
+      gasPrice: 80 * 1000000000,
       accounts: {
         mnemonic: mnemonic(),
       },
