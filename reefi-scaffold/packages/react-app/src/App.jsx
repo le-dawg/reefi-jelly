@@ -702,7 +702,7 @@ function App(props) {
               }}
               to="/"
             >
-              YourCollectibles
+              My ReeFi NFTs
             </Link>
           </Menu.Item>
           <Menu.Item key="/transfers">
@@ -712,7 +712,7 @@ function App(props) {
               }}
               to="/transfers"
             >
-              Transfers
+              My Impact Score
             </Link>
           </Menu.Item>
           <Menu.Item key="/ipfsup">
@@ -721,8 +721,8 @@ function App(props) {
                 setRoute("/ipfsup");
               }}
               to="/ipfsup"
-            >
-              IPFS Upload
+            > 
+              Ecosystem Progress
             </Link>
           </Menu.Item>
           <Menu.Item key="/ipfsdown">
@@ -732,7 +732,7 @@ function App(props) {
               }}
               to="/ipfsdown"
             >
-              IPFS Download
+              Trending NFTs
             </Link>
           </Menu.Item>
           <Menu.Item key="/debugcontracts">
